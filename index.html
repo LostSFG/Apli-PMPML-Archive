@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apli PMPML</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="input-form" class="form-container">
+        <h2>Apli PMPML</h2>
+        
+        <label for="route-select">Route</label>
+        <select id="route-select" onchange="handleRouteSelect()">
+            <option value="148">148</option>
+            <option value="148A">148A</option>
+            <option value="139">139</option>
+            <option value="13A">13A</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="text" id="route-input" class="other-input" style="display: none;" required>
+
+        <label for="tickets-input">Number of Tickets</label>
+        <input type="number" id="tickets-input" required oninput="updateFare()">
+
+        <label for="fare-per-ticket">Fare per Ticket</label>
+        <select id="fare-per-ticket" onchange="updateFare()">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="number" id="fare-input" readonly required>
+
+        <label for="start-point-select">Starting Point</label>
+        <select id="start-point-select" onchange="handleStartPointSelect()">
+            <option value="Pune Station">Pune Station</option>
+            <option value="Yerwada">Yerwada</option>
+            <option value="Mahatma Gandhi Stand">Mahatma Gandhi Stand</option>
+            <option value="Khadki Bazar">Khadki Bazar</option>
+            <option value="Bopodi">Bopodi</option>
+            <option value="Juna Pulgate">Juna Pulgate</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="text" id="start-point-input" class="other-input" style="display: none;" required>
+
+        <label for="end-point-select">Ending Point</label>
+        <select id="end-point-select" onchange="handleEndPointSelect()">
+            <option value="Pune Station">Pune Station</option>
+            <option value="Yerwada">Yerwada</option>
+            <option value="Mahatma Gandhi Stand">Mahatma Gandhi Stand</option>
+            <option value="Khadki Bazar">Khadki Bazar</option>
+            <option value="Bopodi">Bopodi</option>
+            <option value="Juna Pulgate">Juna Pulgate</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="text" id="end-point-input" class="other-input" style="display: none;" required>
+
+        <label for="booking-time-input">Booking Time</label>
+        <input type="datetime-local" id="booking-time-input">
+
+        <label for="validity-time-input">Validity Time</label>
+        <input type="datetime-local" id="validity-time-input">
+
+        <button onclick="generateTicket()">Generate Ticket</button>
+        <button onclick="showHistory()" class="history-button">View Ticket History</button>
+    </div>
+
+    <div id="ticket-container" class="ticket-container" style="display: none;">
+        <div class="header">
+            <h3>पुणे महानगर परिवहन महामंडळ लि.</h3>
+        </div>
+        <div class="details">
+            <div class="route">
+                <span class="label">Route</span>
+                <span class="result" id="route"></span>
+            </div>
+            <div class="tickets">
+                <span class="label">Tickets count</span>
+                <span class="result" id="tickets"></span>
+            </div>
+            <div class="fare">
+                <span class="label">Fare</span>
+                <span class="result" id="fare"></span>
+            </div>
+        </div>
+        <div class="route-line">
+            <span id="start-point" class="bold-text"></span>
+            <div class="arrow">→</div>
+            <strong><span id="end-point"></span></strong>
+        </div>
+        <hr class="dotted-line">
+        <div class="time-info">
+            <div class="time">
+                <p>Booking Time<br><strong><span id="booking-date"></span> | <span id="booking-time"></span></strong></p>
+            </div>
+            <div class="time">
+                <p>Validity Time<br><strong><span id="validity-date"></span> | <span id="validity-time"></span></strong></p>
+            </div>
+        </div>
+        <div class="ticket-no" id="ticket-number"></div>
+        <hr class="dotted-line">
+        <div class="logo-container">
+            <img src="logo.png" alt="PMPML Logo" class="pmpml-logo animated-logo">
+        </div>
+    </div>
+
+    <div id="history-container" class="history-container" style="display: none;">
+        <h3>Ticket History</h3>
+        <button onclick="deleteAllTickets()" class="delete-all-button">Delete All Tickets</button>
+        <div id="history-list"></div>
+        <button onclick="showForm()" class="back-button">Back to Form</button>
+    </div>
+</body>
+</html>
