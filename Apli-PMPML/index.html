@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apli PMPML</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Input form -->
+    <div id="input-form" class="form-container">
+        <h2>Apli PMPML</h2>
+        <label for="route-input">Route</label>
+        <input type="text" id="route-input" required>
+        
+        <label for="tickets-input">Number of Tickets</label>
+        <input type="number" id="tickets-input" required>
+        
+        <label for="fare-input">Fare</label>
+        <input type="number" id="fare-input" required>
+        
+        <label for="start-point-input">Starting Point</label>
+        <input type="text" id="start-point-input" required>
+        
+        <label for="end-point-input">Ending Point</label>
+        <input type="text" id="end-point-input" required>
+        
+        <label for="booking-time-input">Booking Time</label>
+        <input type="datetime-local" id="booking-time-input" required>
+        
+        <label for="validity-time-input">Validity Time</label>
+        <input type="datetime-local" id="validity-time-input" required>
+        
+        <button onclick="generateTicket()">Generate Ticket</button>
+    </div>
+
+    <!-- Ticket display -->
+    <div id="ticket-container" class="ticket-container" style="display: none;">
+        <div class="header">
+            <h3>पुणे महानगर परिवहन महामंडळ लि.</h3>
+        </div>
+        <div class="details">
+            <div class="route">
+                <span class="label">Route</span>
+                <span class="result" id="route"></span>
+            </div>
+            <div class="tickets">
+                <span class="label">Number of Tickets</span>
+                <span class="result" id="tickets"></span>
+            </div>
+            <div class="fare">
+                <span class="label">Fare</span>
+                <span class="result" id="fare"></span>
+            </div>
+        </div>
+        <div class="route-line">
+            <strong><span id="start-point"></span></strong>
+            <div class="arrow">&#x27A1;</div>
+            <strong><span id="end-point"></span></strong>
+        </div>
+        <hr class="dotted-line">
+        <div class="time-info">
+            <div class="time">
+                <p>Booking Time<br><strong><span id="booking-date"></span> | <span id="booking-time"></span></strong></p>
+            </div>
+            <div class="time">
+                <p>Validity Time<br><strong><span id="validity-date"></span> | <span id="validity-time"></span></strong></p>
+            </div>
+        </div>
+        <div class="ticket-no" id="ticket-number"></div>
+        <hr class="dotted-line">
+        <div class="logo-container">
+            <img src="logo.png" alt="PMPML Logo" class="pmpml-logo animated-logo">
+        </div>
+    </div>
+</body>
+</html>
