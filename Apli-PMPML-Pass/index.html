@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apli PMPML</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Input form -->
+    <div id="input-form" class="form-container">
+        <h2>Apli PMPML</h2>
+        <label for="route-select">Pass Type</label>
+        <select id="route-select" onchange="setFare()" required>
+            <option value="" disabled selected>Select Pass Type</option>
+            <option value="Only PMC">Only PMC</option>
+            <option value="Only PCMC">Only PCMC</option>
+            <option value="PMC AND PCMC">PMC AND PCMC</option>
+            <option value="All Routes">All Routes</option>
+        </select>
+
+        <label for="tickets-input">ID</label>
+        <input type="number" id="tickets-input" required>
+
+        <label for="fare-input">Fare</label>
+        <input type="number" id="fare-input" readonly required>
+
+        <label for="booking-time-input">Booking Time</label>
+        <input type="datetime-local" id="booking-time-input" required>
+
+        <button onclick="generateTicket()">Generate Ticket</button>
+    </div>
+
+    <!-- Ticket display -->
+    <div id="ticket-container" class="ticket-container" style="display: none;">
+        <div class="header">
+            <h3>पुणे महानगर परिवहन महामंडळ लि.</h3>
+        </div>
+        <div class="details">
+            <div class="route">
+                <span class="label">Pass Type</span>
+                <span class="result" id="route"></span>
+            </div>
+            <div class="tickets">
+                <span class="label">ID</span>
+                <span class="result" id="tickets"></span>
+            </div>
+            <div class="fare">
+                <span class="label">Fare</span>
+                <span class="result" id="fare"></span>
+            </div>
+        </div>
+        
+        <hr class="dotted-line">
+        <div class="time-info">
+            <div class="time">
+                <p>Booking Time<br><strong><span id="booking-date"></span> | <span id="booking-time"></span></strong></p>
+            </div>
+            <div class="time">
+                <p>Validity Time<br><strong><span id="validity-date"></span> | <span id="validity-time"></span></strong></p>
+            </div>
+        </div>
+        <div class="ticket-no" id="ticket-number"></div>
+        <hr class="dotted-line">
+        <div class="logo-container">
+            <img src="logo.png" alt="PMPML Logo" class="pmpml-logo animated-logo">
+        </div>
+        <div class="bottom">
+          <h3>One Day Pass</h3>
+        </div>
+    </div>
+</body>
+</html>
