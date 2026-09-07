@@ -1,0 +1,176 @@
+/* General Body Styles */
+body {
+    background-color: #D4EAD4;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form and Ticket Container Styles */
+.form-container, .ticket-container {
+    width: 85%;
+    max-width: 400px; /* Reduced ticket size */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Form Header */
+.form-container h2, .ticket-container .header h2 {
+    margin: 0;
+    font-size: 1.4em; /* Slightly smaller text */
+    text-align: center;
+}
+
+/* Input Form Styles */
+.form-container label {
+    display: block;
+    margin: 8px 0 4px;
+    font-weight: bold;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 8px;
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #C0392B;
+}
+
+/* Ticket Container (Initially Hidden) */
+.ticket-container {
+    display: none;
+}
+
+/* Header Section Styles */
+.header {
+    background-color: #F02323;
+    color: white;
+    padding: 8px 5; /* Ensures consistent padding */
+    text-align: center;
+    margin: -47px -20px 5px -20px; /* Moved header upward and reduced space below */
+    border-radius: 10px 10px 0 0;
+    font-size: 1.2em;
+}
+
+/* Details Section Styles */
+.details {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: -5px; /* Removed extra space above the details section */
+    margin-bottom: 5px; /* Further reduced space below details */
+}
+
+.details .label {
+    font-size: 0.8em; /* Smaller font size */
+    color: gray;
+}
+
+.details .result {
+    display: block;
+    font-weight: bold;
+    font-size: 1em;
+    color: black;
+    margin-top: 3px;
+}
+
+/* Dashed Separator Line */
+.dotted-line {
+    border: none;
+    border-top: 1px dashed #000;
+    margin: 10px 0; /* Reduced space above and below dotted line */
+}
+
+/* Time Information */
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0; /* Reduced padding between booking and validity time */
+    margin-bottom: 8px; /* Reduced bottom margin */
+}
+
+/* Ticket Number Styles */
+.ticket-no {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px; /* Reduced margin */
+    font-size: 1em;
+}
+
+/* PMPML Logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.pmpml-logo {
+    width: 200px; /* Reduced logo size */
+    height: auto;
+}
+
+/* Starting and Ending Point Styling */
+.route-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px; /* Reduced space above starting/ending points */
+    text-align: center;
+    font-size: 1.1em; /* Slightly smaller font size */
+    font-weight: bold;
+    color: black;
+}
+
+.arrow {
+    font-size: 2.5em; /* Kept wider arrow */
+    color: black;
+    margin: 0 15px;
+}
+
+/* Bottom Section */
+.bottom {
+    background-color: #F02323;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    margin: 0 -20px -20px -20px;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Animated Logo */
+.animated-logo {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: scale(0.4);
+    }
+    100% {
+        transform: scale(1.3);
+    }
+}
